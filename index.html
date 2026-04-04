@@ -5,20 +5,55 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Algoritmo de Bresenham</title>
   <style>
-    body { font-family: Arial, sans-serif; margin: 20px; }
-    main { max-width: 900px; margin: auto; }
-    fieldset { margin-bottom: 16px; padding: 16px; }
-    label { display: inline-block; width: 40px; margin-right: 8px; }
-    input { width: 70px; margin-right: 12px; }
-    button { margin-right: 10px; padding: 6px 12px; }
-    canvas { display: block; border: 1px solid #000; margin-top: 16px; background: #f8f8f8; }
-    table { width: 100%; border-collapse: collapse; margin-top: 16px; }
-    th, td { border: 1px solid #888; padding: 6px; text-align: center; }
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+    main {
+      max-width: 900px;
+      margin: auto;
+    }
+    fieldset {
+      margin-bottom: 16px;
+      padding: 16px;
+    }
+    label {
+      display: inline-block;
+      width: 40px;
+      margin-right: 8px;
+    }
+    input {
+      width: 70px;
+      margin-right: 12px;
+    }
+    button {
+      margin-right: 10px;
+      padding: 6px 12px;
+    }
+    canvas {
+      display: block;
+      border: 1px solid #000;
+      margin-top: 16px;
+      background: #f8f8f8;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 16px;
+    }
+    th, td {
+      border: 1px solid #888;
+      padding: 6px;
+      text-align: center;
+    }
   </style>
 </head>
 <body>
   <main>
+    <!-- Título principal de la aplicación -->
     <h1>Algoritmo de Bresenham</h1>
+
+    <!-- Sección de entrada de coordenadas -->
     <fieldset>
       <legend>Coordenadas de la línea</legend>
       <label for="x0">x0:</label><input id="x0" type="number" value="50" />
@@ -28,7 +63,11 @@
       <button id="drawButton" type="button">Dibujar línea</button>
       <button id="clearButton" type="button">Limpiar</button>
     </fieldset>
+
+    <!-- Área de dibujo del canvas -->
     <canvas id="canvas" width="800" height="500"></canvas>
+
+    <!-- Tabla de pasos del algoritmo -->
     <h2>Tabla de pasos</h2>
     <table>
       <thead>
@@ -43,6 +82,8 @@
       <tbody id="stepsTable"></tbody>
     </table>
   </main>
+
+  <!-- Script de JavaScript -->
   <script src="script.js" defer></script>
 </body>
 </html>
