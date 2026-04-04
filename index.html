@@ -1,15 +1,31 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Algoritmo de Bresenham</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 20px; }
+    main { max-width: 800px; margin: auto; }
+    fieldset { margin-bottom: 16px; }
+    label { display: inline-block; width: 60px; }
+    input { width: 60px; margin-right: 10px; }
+    button { margin-right: 10px; }
+    table { width: 100%; border-collapse: collapse; margin-top: 16px; }
+    th, td { border: 1px solid #888; padding: 6px; text-align: center; }
+  </style>
 </head>
 <body>
   <main>
     <h1>Algoritmo de Bresenham</h1>
-    <canvas id="canvas" width="600" height="400"></canvas>
-  </main>
+    <fieldset>
+      <legend>Coordenadas de la línea</legend>
+      <button id="drawButton">Dibujar línea</button>
+      <button id="clearButton">Limpiar</button>
+    </fieldset>
+    <canvas id="canvas" width="800" height="500"></canvas>
+    <h2>Tabla de pasos</h2>
+      </main>
   <script src="script.js" defer></script>
 </body>
 </html>
