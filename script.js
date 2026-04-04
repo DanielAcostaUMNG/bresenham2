@@ -15,3 +15,6 @@ function clearCanvas()
   ctx.clearRect(0, 0, canvas.width, canvas.height);
   drawAxes();
 }
+ /** Conectar botones de dibujar y limpiar con eventos.*/
+drawButton.addEventListener('click', dibujarLinea);
+clearButton.addEventListener('click', clearCanvas);
