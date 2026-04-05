@@ -30,7 +30,7 @@ function dibujarLinea()
 
   clearCanvas();
   stepsTable.innerHTML = ""; /** Se crea para limpieza en futura tabla de pasos.*/
-  drawLine(x0, y0, x1, y1);
+  const steps = drawLine(x0, y0, x1, y1); /** Se llama a la funcion de dibujar linea y se guarda los pasos.*/
 }
 
 /** Dibuja un punto en el canvas ajustando las coordenadas.*/
@@ -48,25 +48,47 @@ plot(x1, y1); */
 /** Dibuja una linea usando el algoritmo de Bresenham.
  * Calcula los puntos intermedios entre (x0, y0) y (x1, y1)*/
 function drawLine(x0, y0, x1, y1) {
+
   const dx = Math.abs(x1 - x0);
   const dy = Math.abs(y1 - y0);
+
   const sx = (x0 < x1) ? 1 : -1;
   const sy = (y0 < y1) ? 1 : -1;
+
   let err = dx - dy;
 
+  let steps = []; //  nuevo: almacenamiento de pasos
+
   while (true) {
-    plot(x0, y0);
-    if (x0 === x1 && y0 === y1) break;
+
     const e2 = 2 * err;
+
+    // Dibujar punto actual
+    plot(x0, y0);
+
+    //  guardar estado actual
+    steps.push({
+      x: x0,
+      y: y0,
+      err: err,
+      e2: e2
+    });
+
+    // condición de parada
+    if (x0 === x1 && y0 === y1) break;
+
     if (e2 > -dy) {
       err -= dy;
       x0 += sx;
     }
+
     if (e2 < dx) {
       err += dx;
       y0 += sy;
     }
   }
+
+  return steps; //  nuevo: retornar pasos
 }
 clearCanvas();
 
