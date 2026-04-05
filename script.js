@@ -69,3 +69,5 @@ function drawLine(x0, y0, x1, y1) {
   }
 }
 clearCanvas();
+
+/** Ahora empieza fase para que empiece a guardar cada paso*/
