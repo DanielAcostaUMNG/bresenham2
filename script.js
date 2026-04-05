@@ -93,3 +93,24 @@ function drawLine(x0, y0, x1, y1) {
 clearCanvas();
 
 /** Ahora empieza fase para que empiece a guardar cada paso*/
+
+/** Muestra en la tabla los pasos del algoritmo de Bresenham.
+ ** @param {Array} steps Lista de pasos generados por el algoritmo
+ */
+function llenarTabla(steps) {
+
+  stepsTable.innerHTML = "";
+
+  steps.forEach((step, i) => {
+    const fila = `
+      <tr>
+        <td>${i}</td>
+        <td>${step.x}</td>
+        <td>${step.y}</td>
+        <td>${step.err}</td>
+        <td>${step.e2}</td>
+      </tr>
+    `;
+    stepsTable.innerHTML += fila;
+  });
+}
