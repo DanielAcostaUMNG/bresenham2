@@ -17,7 +17,7 @@ function clearCanvas()
 }
  /** Conectar botones de dibujar y limpiar con eventos.*/
 
- drawButton.addEventListener('click', dibujarLinea);
+drawButton.addEventListener('click', dibujarLinea);
 clearButton.addEventListener('click', clearCanvas);
 
 /** Creacion de funcion princiapl dibujarlineas.*/
@@ -29,6 +29,7 @@ function dibujarLinea()
   const y1 = parseInt(inputY1.value);
 
   clearCanvas();
+  stepsTable.innerHTML = ""; /** Se crea para limpieza en futura tabla de pasos.*/
   drawLine(x0, y0, x1, y1);
 }
 
@@ -44,7 +45,8 @@ const x1 = 100, y1 = 150;
 plot(x0, y0);
 plot(x1, y1); */
 
-/** Dibuja una linea usando el algoritmo de Bresenham.*/
+/** Dibuja una linea usando el algoritmo de Bresenham.
+ * Calcula los puntos intermedios entre (x0, y0) y (x1, y1)*/
 function drawLine(x0, y0, x1, y1) {
   const dx = Math.abs(x1 - x0);
   const dy = Math.abs(y1 - y0);
@@ -66,3 +68,4 @@ function drawLine(x0, y0, x1, y1) {
     }
   }
 }
+clearCanvas();
