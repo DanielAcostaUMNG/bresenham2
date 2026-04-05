@@ -18,3 +18,14 @@ function clearCanvas()
  /** Conectar botones de dibujar y limpiar con eventos.*/
 drawButton.addEventListener('click', dibujarLinea);
 clearButton.addEventListener('click', clearCanvas);
+/** Creacion de funcion princiapl dibujarlineas.*/
+function dibujarLinea() 
+{
+  const x0 = parseInt(inputX0.value);
+  const y0 = parseInt(inputY0.value);
+  const x1 = parseInt(inputX1.value);
+  const y1 = parseInt(inputY1.value);
+
+  clearCanvas();
+  drawLine(x0, y0, x1, y1);
+}
