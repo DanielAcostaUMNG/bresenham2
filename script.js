@@ -38,9 +38,31 @@ function plot(x, y)
   ctx.fillRect(40 + x, canvas.height - 40 - y, 3, 3);
 }
 
-/** Probar funcion plot manualmente.*/
+/** Probar funcion plot manualmente.
 const x0 = 10, y0 = 20;
 const x1 = 100, y1 = 150;
 plot(x0, y0);
-plot(x1, y1); 
+plot(x1, y1); */
 
+/** Dibuja una linea usando el algoritmo de Bresenham.*/
+function drawLine(x0, y0, x1, y1) {
+  const dx = Math.abs(x1 - x0);
+  const dy = Math.abs(y1 - y0);
+  const sx = (x0 < x1) ? 1 : -1;
+  const sy = (y0 < y1) ? 1 : -1;
+  let err = dx - dy;
+
+  while (true) {
+    plot(x0, y0);
+    if (x0 === x1 && y0 === y1) break;
+    const e2 = 2 * err;
+    if (e2 > -dy) {
+      err -= dy;
+      x0 += sx;
+    }
+    if (e2 < dx) {
+      err += dx;
+      y0 += sy;
+    }
+  }
+}
