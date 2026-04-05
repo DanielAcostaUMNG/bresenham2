@@ -16,8 +16,10 @@ function clearCanvas()
   drawAxes();
 }
  /** Conectar botones de dibujar y limpiar con eventos.*/
-drawButton.addEventListener('click', dibujarLinea);
+
+ drawButton.addEventListener('click', dibujarLinea);
 clearButton.addEventListener('click', clearCanvas);
+
 /** Creacion de funcion princiapl dibujarlineas.*/
 function dibujarLinea() 
 {
@@ -29,3 +31,16 @@ function dibujarLinea()
   clearCanvas();
   drawLine(x0, y0, x1, y1);
 }
+
+/** Dibuja un punto en el canvas ajustando las coordenadas.*/
+function plot(x, y) 
+{
+  ctx.fillRect(40 + x, canvas.height - 40 - y, 3, 3);
+}
+
+/** Probar funcion plot manualmente.*/
+const x0 = 10, y0 = 20;
+const x1 = 100, y1 = 150;
+plot(x0, y0);
+plot(x1, y1); 
+
