@@ -115,3 +115,45 @@ function llenarTabla(steps) {
     stepsTable.innerHTML += fila;
   });
 }
+
+function drawAxes() {
+  ctx.strokeStyle = '#000';
+  ctx.lineWidth = 1;
+
+  // Eje X
+  ctx.beginPath();
+  ctx.moveTo(40, canvas.height - 40);
+  ctx.lineTo(canvas.width - 40, canvas.height - 40);
+  ctx.stroke();
+
+  // Eje Y
+  ctx.beginPath();
+  ctx.moveTo(40, canvas.height - 40);
+  ctx.lineTo(40, 40);
+  ctx.stroke();
+
+  // Marcas de escala cada 20 unidades
+  for (let i = 0; i <= (canvas.width - 80) / 20; i++) {
+    const x = 40 + i * 20;
+    ctx.beginPath();
+    ctx.moveTo(x, canvas.height - 35);
+    ctx.lineTo(x, canvas.height - 45);
+    ctx.stroke();
+    if (i > 0) {
+      ctx.fillText(i * 20, x - 10, canvas.height - 25);
+    }
+  }
+
+  for (let i = 0; i <= (canvas.height - 80) / 20; i++) {
+    const y = canvas.height - 40 - i * 20;
+    ctx.beginPath();
+    ctx.moveTo(35, y);
+    ctx.lineTo(45, y);
+    ctx.stroke();
+    if (i > 0) {
+      ctx.fillText(i * 20, 10, y + 5);
+    }
+  }
+}
+
+drawAxes();
