@@ -31,6 +31,7 @@ function dibujarLinea()
   clearCanvas();
   stepsTable.innerHTML = ""; /** Se crea para limpieza en futura tabla de pasos.*/
   const steps = drawLine(x0, y0, x1, y1); /** Se llama a la funcion de dibujar linea y se guarda los pasos.*/
+  llenarTabla(steps); /** Se llama a la funcion para llenar la tabla con los pasos generados.*/
 }
 
 /** Dibuja un punto en el canvas ajustando las coordenadas.*/
